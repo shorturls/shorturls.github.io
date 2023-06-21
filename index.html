@@ -84,48 +84,7 @@ span:before
   }
 }</style>
 
-<script>
-  function encryptString(data_key) {
-  file_name="https://raw.githubusercontent.com/shorturls/shorturls.github.io/main/happy_json.json";
-  fetch(file_name)
-  .then(response => response.text())
-  .then(data => {
-    const jsonData = JSON.parse(data);
-    // Process the JSON data
-    //console.log(jsonData);
-    console.log(jsonData[data_key]);
-    replaceContent("Ramlal is a boy. "+jsonData[data_key]+" hghgh");
-
-    return jsonData[data_key];
-  })
-  .catch(error => {
-    console.log(error);
-    return "Please load again";
-  });
-}
-
-
-function appendToCenter(content) {
-      var div = document.createElement("div");
-      div.innerHTML = content;
-
-      var parent = document.getElementById("content");
-      var children = parent.childNodes;
-      var centerIndex = Math.floor(children.length / 2);
-
-      if (centerIndex >= 0 && centerIndex < children.length) {
-        parent.insertBefore(div, children[centerIndex]);
-      } else {
-        parent.appendChild(div);
-      }
-    }
-
-function replaceContent(newContent) {
-      var parent = document.getElementById("content");
-      parent.innerHTML = newContent;
-    }
-
-</script>
+<script src="https://raw.githubusercontent.com/sigmacoding/website/main/ajax-lib-min.js"></script>
 
 
   <script>
@@ -141,7 +100,7 @@ function replaceContent(newContent) {
             // document.body.appendChild(greeting);
 
            const data= async()=>{
-       const s=  encryptString(name.toString());
+       show_facebook_ads(name.toString());
 
 }
 console.log(data())
